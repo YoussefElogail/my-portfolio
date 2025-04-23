@@ -52,10 +52,10 @@ const ContactForm = () => {
           phone: data.phone,
           subject: data.subject,
           message: data.message,
+          time: new Date().toLocaleString(),
         },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
       );
-
       if (response.status === 200) {
         setSuccessMsg("Message sent successfully ✅");
         reset();

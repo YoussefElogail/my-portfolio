@@ -26,7 +26,7 @@ const skills = [
 
 const Hero = () => {
   return (
-    <section className="section-container min-h-[calc(100vh-100px)] flex flex-col-reverse sm:flex-row gap-2 items-center text-lightn justify-between">
+    <section className="section-container min-h-[calc(100vh-100px)] flex flex-col-reverse sm:flex-row gap-2 items-center text-lightn justify-between overflow-hidden">
       {/* Left Content */}
       <div className="flex flex-col gap-6">
         <div className="space-y-3">
