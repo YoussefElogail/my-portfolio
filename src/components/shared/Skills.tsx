@@ -15,7 +15,7 @@ const Skills = ({ title, skills }: SkillsProps) => {
   return (
     <div className="space-y-2 capitalize">
       {title && <p>{title}</p>}
-      <div className="flex gap-1.5 items-center">
+      <div className="flex gap-1.5 items-center flex-wrap">
         {skills.map(({ name, icon }) => (
           <MyToolTip key={name} tip={name} className="capitalize">
             <div className="bg-secondary-black rounded-lg p-2 inline-block w-16 h-16">
