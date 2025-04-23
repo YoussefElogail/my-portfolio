@@ -15,7 +15,7 @@ const ContactInfo = () => {
         <CardTitle className="overflow-hidden rounded-md">
           <Image
             unoptimized
-            src="https://placehold.co/50"
+            src="/images/contact1.png"
             alt={"dd"}
             height={1000}
             width={1000}
@@ -32,12 +32,21 @@ const ContactInfo = () => {
           my account.
         </p>
         <div>
-          Phone: <a className="relative inline-block text-stone-300 hover:text-primary-color after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 hover:after:w-full after:bg-primary-color after:transition-all after:duration-300 "  href="tel:+201150781257">+201150781257</a>
+          Phone:{" "}
+          <a
+            className="relative inline-block text-stone-300 hover:text-primary-color after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 hover:after:w-full after:bg-primary-color after:transition-all after:duration-300 "
+            href="tel:+201150781257"
+          >
+            +201150781257
+          </a>
         </div>
         <div className="">
           Email:{" "}
-          <a className="relative inline-block text-stone-300 hover:text-primary-color after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 hover:after:w-full after:bg-primary-color after:transition-all after:duration-300" href="mailto:youssef.elogail0@gmail.com">
-            youssef.elogail0@gmail.com
+          <a
+            className="relative inline-block text-stone-300 hover:text-primary-color after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 hover:after:w-full after:bg-primary-color after:transition-all after:duration-300"
+            href="mailto:youssef.elogail.0@gmail.com"
+          >
+            youssef.elogail.0@gmail.com
           </a>
         </div>
         <SocialMedia />

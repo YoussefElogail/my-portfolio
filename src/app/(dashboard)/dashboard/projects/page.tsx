@@ -6,13 +6,14 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import { db } from "@/config/firebase";
 import { collection } from "firebase/firestore";
 import Spier from "@/components/shared/Spier";
+import { IProject } from "@/types/project";
 
 const ProjectsPage = () => {
   const [value, loading, error] = useCollection(collection(db, "projects"));
-  const data =
+  const data: IProject[] =
     value?.docs?.map((doc) => ({
       id: doc.id,
-      ...doc.data(),
+      ...(doc.data() as Omit<IProject, "id">),
     })) || [];
 
   if (loading) return <Spier loading={loading} />;

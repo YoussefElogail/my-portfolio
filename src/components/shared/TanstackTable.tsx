@@ -4,6 +4,7 @@ import {
   flexRender,
   getCoreRowModel,
   useReactTable,
+  ColumnDef,
 } from "@tanstack/react-table";
 import React, { useMemo, useState } from "react";
 import TableHeader from "./TableHeader";
@@ -11,7 +12,7 @@ import MyDialog from "./shadcn/MyDialog";
 
 type TanstackTableProps<T> = {
   data: T[];
-  columnDef: T[];
+  columnDef: ColumnDef<T>[];
   title: string;
   canCreate?: boolean;
   formComponent?: React.ReactNode;
@@ -25,13 +26,14 @@ const TanstackTable = <T,>({
   formComponent,
 }: TanstackTableProps<T>) => {
   const memoizedData = useMemo(() => data, [data]);
-  const memoizedColumns = useMemo(() => columnDef, [columnDef]);
+  const memoizedColumns = useMemo(() => columnDef, [columnDef]); // هذا السطر يتم تحديد نوع columnDef بشكل صحيح الآن
   const [showCreate, setShowCreate] = useState(false);
   const { getHeaderGroups, getRowModel } = useReactTable({
     data: memoizedData,
     columns: memoizedColumns,
     getCoreRowModel: getCoreRowModel(),
   });
+
   return (
     <>
       <div className="flex flex-col gap-4 p-4">

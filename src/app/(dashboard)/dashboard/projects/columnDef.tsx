@@ -1,5 +1,5 @@
 import { IProject } from "@/types/project";
-import { createColumnHelper } from "@tanstack/react-table";
+import { createColumnHelper, ColumnDef } from "@tanstack/react-table";
 import Image from "next/image";
 import { Button } from "@/components/ui/button"; // تأكد من أن لديك مكون Button
 import MyDialog from "@/components/shared/shadcn/MyDialog";
@@ -7,36 +7,41 @@ import ProjectForm from "@/components/app/dashboard/projects/ProjectForm";
 import useDeleteData from "@/hooks/useDeleteData";
 
 const columnHelper = createColumnHelper<IProject>();
-
-export const clumnDef = [
-  columnHelper.accessor("name", {
+export const clumnDef: ColumnDef<IProject>[] = [
+  columnHelper.accessor((row) => row.name as unknown, {
     header: "Name",
-    cell: (info) => <p>{info.getValue()}</p>,
+    cell: (info) => info.getValue() as string,
   }),
-  columnHelper.accessor("description", {
+  columnHelper.accessor((row) => row.description as unknown, {
     header: "Description",
-    cell: (info) => <p>{info.getValue()}</p>,
+    cell: (info) => info.getValue() as string,
   }),
-  columnHelper.accessor("image", {
+  columnHelper.accessor((row) => row.image as unknown, {
     header: "Image",
-    cell: (info) => (
-      <Image
-        src={info.getValue()}
-        alt="project image"
-        height={100}
-        width={100}
-        unoptimized
-        loading="lazy"
-      />
-    ),
+    cell: (info) => {
+      const src = info.getValue() as string;
+      return (
+        <Image
+          src={src}
+          alt="project image"
+          height={100}
+          width={100}
+          unoptimized
+          loading="lazy"
+        />
+      );
+    },
   }),
-  columnHelper.accessor("link", {
+  columnHelper.accessor((row) => row.link as unknown, {
     header: "Link",
-    cell: (info) => (
-      <a href={info.getValue()} target="_blank" rel="noopener noreferrer">
-        {info.getValue()}
-      </a>
-    ),
+    cell: (info) => {
+      const value = info.getValue() as string | undefined;
+      return value ? (
+        <a href={value} target="_blank" rel="noopener noreferrer">
+          {value}
+        </a>
+      ) : null;
+    },
   }),
   columnHelper.display({
     id: "actions",
@@ -65,8 +70,7 @@ export const clumnDef = [
 ];
 
 const handleDelete = (project: IProject) => {
-  console.log(project.id);
   const { deleteData } = useDeleteData();
-  deleteData({ docId: project.id, collectionName: "projects" });
+  deleteData({ docId: project.id!, collectionName: "projects" });
   // هنا يمكنك إضافة منطق لحذف المشروع (مثلًا، حذف من قاعدة البيانات)
 };

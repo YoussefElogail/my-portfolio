@@ -22,6 +22,7 @@ const ProjectForm = ({ data }: ProjectFormProps) => {
     reset,
     formState: { errors },
   } = useForm<IProjectSend>();
+  console.log(data);
   useEffect(() => {
     if (data) {
       reset({
@@ -50,13 +51,13 @@ const ProjectForm = ({ data }: ProjectFormProps) => {
 
     const dataToSend = {
       ...formData,
-      image: imageUrl,
+      image: imageUrl || (data?.image as string),
     };
 
     if (data) {
       await updateData({
         collectionName: "projects",
-        docId: data.id,
+        docId: data.id!,
         newData: dataToSend,
       });
     } else {
@@ -105,7 +106,9 @@ const ProjectForm = ({ data }: ProjectFormProps) => {
                   label={input.name}
                   type={input.type}
                   {...register(input.name as keyof IProject, {
-                    required: !!input.isRequired,
+                    required: !data
+                      ? input.isRequired.create
+                      : input.isRequired.edit,
                   })}
                   errMessage={input.errorMessage}
                   fieldError={!!errors[fieldError]}
