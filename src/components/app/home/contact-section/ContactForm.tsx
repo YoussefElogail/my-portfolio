@@ -76,7 +76,7 @@ const ContactForm = () => {
         "border-none border-transparent bg-primary-black shadow-sm shadow-primary-color gap-2 group md:col-span-3 h-fit"
       )}
     >
-      <CardContent className="space-y-4 text-lightn">
+      <CardContent className="space-y-4 text-lightn overflow-hidden">
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
           {inputs.map((input, index) => {
             const fieldName = input.name as keyof IContact;

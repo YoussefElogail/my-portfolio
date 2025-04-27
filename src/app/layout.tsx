@@ -76,11 +76,7 @@ export default function RootLayout({
       lang="en"
       className={`w-full h-full ${geistSans.variable} ${geistMono.variable}`}
     >
-      <body className="antialiased bg-primary-black">
-        <Header />
-        {children}
-        <Footer />
-      </body>
+      <body className="antialiased bg-primary-black">{children}</body>
     </html>
   );
 }

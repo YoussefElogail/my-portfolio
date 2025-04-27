@@ -49,34 +49,41 @@ const Portfolio = () => {
           />
         </div>
 
-        <div className="flex flex-nowrap overflow-x-auto overflow-hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:col-span-9 pb-8">
-          {projects.map((project, i) => {
-            return (
-              <MyDialog
-                className="bg-secondary-black text-white border-1 border-primary-color "
-                key={project.id}
-                trigger={
-                  <ProjectCard
-                    index={i}
-                    image={project.image}
-                    title={project.name}
+        {projects.length > 0 ? (
+          <div className="flex flex-nowrap overflow-x-auto overflow-hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:col-span-9 pb-8">
+            {projects.map((project, i) => {
+              return (
+                <MyDialog
+                  className="bg-secondary-black text-white border-1 border-primary-color "
+                  key={project.id}
+                  trigger={
+                    <ProjectCard
+                      index={i}
+                      image={project.image}
+                      title={project.name}
+                      description={project.description}
+                      className="border-none cursor-pointer min-w-[200px] "
+                    />
+                  }
+                >
+                  <ProjectDetails
+                    name={project.name}
                     description={project.description}
-                    className="border-none cursor-pointer min-w-[200px] "
+                    image={project.image}
+                    technologies={project.technologies}
+                    link={project.link}
+                    websiteType={project.websiteType}
                   />
-                }
-              >
-                <ProjectDetails
-                  name={project.name}
-                  description={project.description}
-                  image={project.image}
-                  technologies={project.technologies}
-                  link={project.link}
-                  websiteType={project.websiteType}
-                />
-              </MyDialog>
-            );
-          })}
-        </div>
+                </MyDialog>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="flex flex-col items-center justify-center w-full  h-60 text-center text-lightn bg-secondary-black rounded-lg shadow-md md:col-span-9">
+            <p className="text-xl font-semibold mb-2">No projects found</p>
+            <p className="text-sm text-gray-400">Please check back later!</p>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -5,15 +5,14 @@ import MySkils from "@/components/app/home/my-skills-section/MySkills";
 import Portfolio from "@/components/app/home/portfolio-section/Portfolio";
 import Image from "next/image";
 
-
 export default function HomePage() {
   return (
-   <div className="space-y-32">
-   <Hero />
-   <Features />
-   <Portfolio />
-   <MySkils />
-   <Contact />
-   </div>
+    <div className="flex flex-col gap-36  ">
+      <Hero />
+      <Features />
+      <Portfolio />
+      <MySkils />
+      <Contact />
+    </div>
   );
 }
