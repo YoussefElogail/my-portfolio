@@ -3,8 +3,9 @@ export const activeRoutes = {
   features: "features",
   portfolio: "portfolio",
   contact: "contact",
-  admin:{
+  productDetails: "product-details",
+  admin: {
     dashboard: "/dashboard",
-    projects: "/dashboard/projects"
-  }
+    projects: "/dashboard/projects",
+  },
 };

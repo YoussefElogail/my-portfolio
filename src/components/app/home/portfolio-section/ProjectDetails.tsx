@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import { Button } from "../../../ui/button";
 import { IProjectDetails } from "@/types/project";
+import Link from "next/link";
+import { activeRoutes } from "@/routes/activeRoutes";
 
 const ProjectDetails = ({
   description,
@@ -10,9 +12,11 @@ const ProjectDetails = ({
   technologies,
   link,
   websiteType,
+  id,
 }: IProjectDetails) => {
+  console.log(id);
   return (
-    <div className="flex flex-col md:flex-row gap-6">
+    <div className="flex flex-col md:flex-row gap-6 overflow-y-auto max-h-[400px]">
       <div className="md:w-1/2">
         <Image
           src={image}
@@ -63,6 +67,9 @@ const ProjectDetails = ({
           <a href={link} target="_blank" rel="noopener noreferrer">
             <Button className="mt-4 w-full cursor-pointer">Live</Button>
           </a>
+          <Link href={`${activeRoutes.productDetails}/${id}`}>
+            <Button className="mt-4 w-full cursor-pointer">Show details</Button>
+          </Link>
         </div>
       </div>
     </div>

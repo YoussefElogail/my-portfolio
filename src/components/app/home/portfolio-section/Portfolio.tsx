@@ -67,6 +67,7 @@ const Portfolio = () => {
                   }
                 >
                   <ProjectDetails
+                    id={project.id}
                     name={project.name}
                     description={project.description}
                     image={project.image}

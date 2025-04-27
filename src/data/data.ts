@@ -23,13 +23,15 @@ export const mainSkills = [
 ];
 
 export const websiteTypes = [
+  // { label: "Blog", value: "blog" },
+  // { label: "E-commerce Store", value: "ecommerce" },
   { label: "Landing Page", value: "landing" },
-  { label: "Blog", value: "blog" },
-  { label: "E-commerce Store", value: "ecommerce" },
-  // { label: "Service-based Site / SaaS", value: "saas" },
+  { label: "SaaS", value: "saas" },
+  { label: "Coupon Platform", value: "coupon" },
   { label: "Dashboard", value: "dashboard" },
+  { label: "EMS", value: "ems" },
+  { label: "Portfolio", value: "portfolio" },
   // { label: "Learning Platform / Online Courses", value: "learning" },
   // { label: "Classified Ads Site", value: "classifieds" },
-  { label: "Portfolio", value: "portfolio" },
   // { label: "Membership / Subscription Site", value: "membership" },
 ];
