@@ -50,7 +50,7 @@ const Portfolio = () => {
         </div>
 
         {projects.length > 0 ? (
-          <div className="flex flex-nowrap overflow-x-auto overflow-hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:col-span-9 pb-8">
+          <div className="flex flex-nowrap overflow-x-auto overflow-hidden px-2 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:col-span-9 pb-8">
             {projects.map((project, i) => {
               return (
                 <MyDialog
