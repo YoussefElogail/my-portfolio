@@ -61,6 +61,7 @@ const Features = () => {
       transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: true }}
       className="section-container"
+      id="features"
     >
       <SectionTitle title="What I Do" subtitle="Features" />
 

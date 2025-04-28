@@ -1,4 +1,5 @@
 "use client";
+import MyDialog from "@/components/shared/shadcn/MyDialog";
 import { Button } from "@/components/ui/button";
 import { db } from "@/config/firebase";
 import { IProjectDetails } from "@/types/project";
@@ -21,17 +22,30 @@ const ShowProject = ({ id }: { id: string }) => {
   }
 
   return (
-    <section className="grid md:grid-cols-2 gap-6 p-6">
+    <section className="grid md:grid-cols-2 gap-6 p-6 h-[600px] overflow-hidden">
       <div>
-        <Image
-          src={projectData.image || "https://placehold.co/600x400"}
-          alt={projectData.name}
-          height={600}
-          width={800}
-          className="w-full h-auto rounded-xl object-cover"
-        />
+        <MyDialog
+          trigger={
+            <Image
+              src={projectData.image || "https://placehold.co/600x400"}
+              alt={projectData.name}
+              height={600}
+              width={800}
+              className="w-full h-full rounded-xl object-cover "
+            />
+          }
+          className="overflow-scroll h-[90dvh]"
+        >
+          <Image
+            src={projectData.image || "https://placehold.co/600x400"}
+            alt={projectData.name}
+            height={1000}
+            width={1000}
+            className="w-full  rounded-xl object-cover  "
+          />
+        </MyDialog>
       </div>
-      <div className="flex flex-col justify-between">
+      <div className="flex flex-col ">
         <div>
           <h4 className="text-xl font-semibold mt-2 text-primary-color">
             {projectData.name}

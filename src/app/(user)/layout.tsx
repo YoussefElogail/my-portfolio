@@ -15,7 +15,7 @@ export default function UserLayout({
   return (
     <>
       <Header />
-      <main className="my-container text-secondary-color mt-[80px]">
+      <main className="my-container text-secondary-color mt-[100px]">
         {children}
       </main>
       <Footer />

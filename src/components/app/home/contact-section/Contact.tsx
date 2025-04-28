@@ -13,6 +13,7 @@ const Contact = () => {
       transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: true }}
       className="section-container "
+      id="contact"
     >
       <SectionTitle title="Contact" subtitle="Contact With Me" />
       <div className="grid grid-cols-1 grid-rows-1 md:grid-cols-4 gap-8">

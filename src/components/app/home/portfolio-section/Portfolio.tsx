@@ -35,7 +35,7 @@ const Portfolio = () => {
   console.log(projects);
 
   return (
-    <section className="section-container">
+    <section className="section-container" id="portfolio">
       <SectionTitle
         title="My Portfolio"
         subtitle="Visit my portfolio and keep your feedback"

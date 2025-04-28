@@ -25,6 +25,7 @@ export const mainSkills = [
 export const websiteTypes = [
   // { label: "Blog", value: "blog" },
   // { label: "E-commerce Store", value: "ecommerce" },
+  { label: "Portfolio", value: "portfolio" },
   { label: "Landing Page", value: "landing" },
   { label: "SaaS", value: "saas" },
   { label: "Coupon Platform", value: "coupon" },

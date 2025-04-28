@@ -46,9 +46,9 @@ const Drawer = ({ showDrawer, handleShowDrawer }: DrawerProps) => {
                 type: "tween",
               }}
               exit="exit"
-              className="fixed left-0 top-0 bottom-0 bg-primary-black flex flex-col  text-secondary-color w-3/4 sm:max-w-[300px] px-10 py-6 z-10"
+              className="overflow-y-auto fixed left-0 top-0 bottom-0 bg-primary-black flex flex-col  text-secondary-color w-3/4 sm:max-w-[300px] px-10 py-6 z-10"
             >
-              <div className="flex flex-col gap-4 relative">
+              <div className="flex flex-col gap-4 ">
                 {" "}
                 <Link href={activeRoutes.home}>
                   <Image
@@ -59,11 +59,11 @@ const Drawer = ({ showDrawer, handleShowDrawer }: DrawerProps) => {
                     width={100}
                   />
                 </Link>
-                <p className="text-lightn">
+                {/* <p className="text-lightn">
                   Inbio is a personal portfolio template. You can customize all.
-                </p>
+                </p> */}
                 <motion.span
-                  className="absolute right-0 top-4"
+                  className="absolute right-4 top-4"
                   whileHover={{
                     scale: 1.1,
                   }}

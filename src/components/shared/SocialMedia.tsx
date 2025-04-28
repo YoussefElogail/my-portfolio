@@ -27,7 +27,7 @@ const SocialMedia = () => {
   return (
     <div className="space-y-2 capitalize">
       <p>find with me</p>
-      <div className="flex gap-1.5 items-center">
+      <div className="flex flex-wrap gap-1.5 items-center">
         {socialMedia.map(({ href, name, icon }) => (
           <MyToolTip key={name} tip={name} className="capitalize">
             <motion.a
